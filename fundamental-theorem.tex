@@ -1,0 +1,36 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\begin{document}
+\title{Partial Derivatives}
+\date{\today}
+\pagestyle{empty} 
+\section{Fundamental Theorem of Calculus I}
+	If a function $f$ is continuous on the closed interval $[a, b]$ and $F$ is an antiderivative of $f$ on the interval $[a, b]$, then:
+\begin{align}
+	\int_a^b f(x) dx = F(b) - F(a)
+\end{align}
+\section{Proof}
+	Write the difference $F(b) - F(a)$ in expanded form.  Let $\Delta$ be any partition of $[a, b]$.
+\begin{align*}
+	a &= x_0 < x_1 < x_2 < \ldots < x_{n-1} < x_n = b
+\end{align*}
+	Write the pairwise subtraction and addition of like terms.
+\begin{align*}
+	F(x_n) - F(x_{n-1}) + F(x_{n-1}) - \ldots - F(x_1) + F(x_1) - F(x_0)	
+\end{align*}
+\begin{align}
+	F(b) - F(a) &= \displaystyle\sum_{i=1}^{n} [F(x_i) - F(x_{i-1})]
+\end{align}
+	By the Mean Value Theorem, there exists a number $c_i$ in the $ith$ subinterval.
+\begin{align*}
+	F'(c_i) = \frac{F(x_i) - F(x_{i-1})}{x_i - x_{i-1}}
+\end{align*}	
+	Because $F'(c_i) = F(c_i)$, let $\Delta x_i = x_i - x_{i-1}$ to obtain
+\begin{align}
+	F(b) - F(a) = \displaystyle\sum_{i=1}^{n} f(c_i) \Delta x_i
+\end{align}
+	By continuously applying the Mean Value Theorem, you can find a collection of $c_i$'s such that the $constant$ $F(b) - F(a)$ is a Riemann sum of $f$ on $[a, b]$ for any partition.  	
+\begin{align*}
+	F(b) - F(a) = \int_a^b f(x) dx 
+\end{align*}
+\end{document}
